@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Watermark to Images Online - ToolVerses</title>
+  <meta name="description" content="Free online tool to add text or image watermark to your photos. 100% private and browser-based." />
+  <meta name="keywords" content="add watermark, image watermark tool, text watermark, photo watermark, watermark image online" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/image/watermark.html" />
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="Add Watermark to Images Online - ToolVerses" />
+  <meta property="og:description" content="Browser-based tool to watermark your images with text or image. Secure and free." />
+  <meta property="og:image" content="../../assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/image/watermark.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Add Watermark to Images Online - ToolVerses" />
+  <meta name="twitter:description" content="Add watermark to photos securely in your browser." />
+  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
+
+  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <style>
+    .tool-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+    }
+
+    .upload-area {
+      border: 2px dashed #ced4da;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: 0.2s ease;
+      background-color: #fdfdfd;
+    }
+
+    .upload-area.dragover {
+      background-color: #f1f5ff;
+      border-color: #86b7fe;
+    }
+
+    .preview-wrapper {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+      width: fit-content;
+    }
+
+    #uploaded-image {
+      max-height: 600px;
+      width: auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    #draggable-watermark {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-weight: bold;
+      cursor: move;
+      user-select: none;
+      text-shadow: 1px 1px 2px black;
+      z-index: 10;
+      padding: 4px 10px;
+      background: transparent;
+      border: 1px dashed #888;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      color: #fff;
+    }
+
+    #draggable-watermark:hover {
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    }
+
+    #draggable-watermark-img {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      max-width: 100px;
+      cursor: move;
+      z-index: 10;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+          <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a class="nav-link" href="../../about.html">About</a>
+            <a class="nav-link active" href="../">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5" style="background: linear-gradient(145deg, #f4f7fa, #e8ecf1); min-height: 90vh;">
+    <div class="container">
+     
+      <div class="row justify-content-between align-items-start">
+        <div class="mb-3">
+          <a href="../image/index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3" style="font-size: 0.875rem;">
+            ← Back
+          </a>
+        </div>
+        <div class="col-lg-9">
+          <article class="tool-box mb-4">
+            <h1 class="fw-bold mb-3">💧 Add Watermark to Images</h1>
+            <p class="text-muted mb-4">Add custom text or image watermark to your photos — 100% private, no upload.</p>
+
+            <div class="mb-3">
+              <input type="text" id="watermarkText" class="form-control mb-3" placeholder="Enter watermark text" value="ToolVerses" />
+            </div>
+
+            <div class="mb-3">
+              <label for="watermarkSize" class="form-label fw-semibold">Watermark Size: <span id="sizeValue">24</span>px</label>
+              <input type="range" class="form-range" id="watermarkSize" min="12" max="100" value="24" />
+            </div>
+
+            <div class="mb-3">
+              <label for="watermarkColor" class="form-label fw-semibold">Text Color:</label>
+              <input type="color" id="watermarkColor" value="#ffffff" class="form-control form-control-color" style="width:60px;" />
+            </div>
+
+            <div class="mb-3">
+              <label for="watermarkOpacity" class="form-label fw-semibold">Watermark Opacity:</label>
+              <input type="range" class="form-range" id="watermarkOpacity" min="0" max="1" step="0.01" value="1" />
+            </div>
+
+            <div class="mb-3">
+              <label for="watermarkImageInput" class="form-label fw-semibold">Watermark Image (optional)</label>
+              <input type="file" id="watermarkImageInput" accept="image/*" class="form-control" />
+            </div>
+
+            <div id="upload-area" class="upload-area mb-4">
+              <p class="mb-1 fw-semibold">Drag & drop your image here</p>
+              <p class="text-muted small mb-3">or</p>
+              <input type="file" id="imageInput" accept="image/*" class="form-control" />
+            </div>
+
+            <div id="preview-container" class="text-center">
+              <div class="preview-wrapper" style="display:none;">
+                <img id="uploaded-image" src="" alt="Watermarked Preview" class="img-fluid rounded shadow" />
+
+                <!-- ✅ Text watermark -->
+                <div id="draggable-watermark" contenteditable="true">
+                  <span style="margin-right: 6px; cursor: grab;">↕</span><span id="watermark-content">ToolVerses</span>
+                </div>
+
+                <!-- ✅ Image watermark -->
+                <img id="draggable-watermark-img" src="" alt="Watermark Image" />
+              </div>
+
+              <div class="mt-4" id="controls" style="display:none;">
+                <button id="downloadAllBtn" class="btn btn-primary btn-sm me-2">📦 Download</button>
+                <button id="resetAllBtn" class="btn btn-outline-secondary btn-sm">🔄 Reset</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="col-lg-3 d-none d-lg-block">
+          <div class="bg-white rounded-4 shadow-sm text-center p-3 h-100">
+            <p class="text-muted small mb-2">Sponsored</p>
+            <div style="width: 100%; height: 280px; background: #e9ecef; border-radius: 8px;">
+              <p class="text-muted small mt-5">Ad Placeholder</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="../../assets/js/add-watermark.js"></script>
+</body>
+</html>

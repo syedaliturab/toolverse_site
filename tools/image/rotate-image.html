@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotate Images Online - Free & Instant | ToolVerses</title>
+  <meta name="description" content="Rotate JPG, PNG, or WebP images left or right online. No upload, 100% private and browser-based." />
+  <meta name="keywords" content="rotate image online, image rotator, rotate jpg png webp, no upload tool, browser image editor" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/image/rotate-image.html" />
+  <meta property="og:title" content="Rotate Image Online - Free & Private | ToolVerses" />
+  <meta property="og:description" content="Rotate your images left or right instantly. 100% browser-based and secure." />
+  <meta property="og:image" content="../../assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/image/rotate-image.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rotate Images Online - ToolVerses" />
+  <meta name="twitter:description" content="Rotate images instantly in your browser. Secure and upload-free." />
+  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
+
+  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <style>
+    .tool-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+    }
+    .upload-area {
+      border: 2px dashed #ced4da;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+    .upload-area.dragover {
+      background-color: #f1f5ff;
+      border-color: #86b7fe;
+    }
+    .preview-box img {
+      max-height: 300px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+          <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a class="nav-link" href="../../about.html">About</a>
+            <a class="nav-link active" href="../">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5" style="background: linear-gradient(145deg, #f4f7fa, #e8ecf1); min-height: 90vh;">
+    <div class="container">
+       
+      <div class="row justify-content-between align-items-start">
+        <div class="mb-3">
+            <a href="../image/index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3" style="font-size: 0.875rem;">
+              ← Back
+            </a>
+          </div>
+        <div class="col-lg-9">
+          <article class="tool-box mb-4">
+            <h1 class="fw-bold mb-3">🔄 Rotate Images</h1>
+            <p class="text-muted mb-4">Rotate your images left or right — 100% private and in your browser.</p>
+
+            <div id="upload-area" class="upload-area mb-4">
+              <p class="mb-1 fw-semibold">Drag & drop your images here</p>
+              <p class="text-muted small mb-3">or</p>
+              <input type="file" id="imageInput" accept="image/*" class="form-control" multiple />
+            </div>
+
+            <div class="text-center mb-4">
+                <button id="rotateLeftAllBtn" class="btn btn-outline-secondary btn-sm me-2" style="display: none;">⏪ Rotate All Left</button>
+                <button id="rotateRightAllBtn" class="btn btn-outline-secondary btn-sm me-2" style="display: none;">⏩ Rotate All Right</button>
+                <button id="resetAllBtn" class="btn btn-outline-warning btn-sm me-2" style="display: none;">🔄 Reset All</button>
+                <button id="removeAllBtn" class="btn btn-outline-danger btn-sm me-2" style="display: none;">❌ Remove All</button>
+                <button id="downloadAllBtn" class="btn btn-primary btn-sm" style="display: none;">📦 Download All</button>
+              </div>
+
+            <div id="preview-container" class="row g-4 justify-content-start"></div>
+          </article>
+        </div>
+
+        <aside class="col-lg-3 d-none d-lg-block">
+          <div class="bg-white rounded-4 shadow-sm text-center p-3 h-100">
+            <p class="text-muted small mb-2">Sponsored</p>
+            <div style="width: 100%; height: 280px; background: #e9ecef; border-radius: 8px;">
+              <p class="text-muted small mt-5">Ad Placeholder</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/rotate-image.js"></script>
+</body>
+</html>

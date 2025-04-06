@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ToolVerses - Free Online Tools Hub</title>
+  <meta name="description" content="ToolVerses — Your go-to hub for free, fast & private online tools like Image to PDF, JSON Formatter, and more." />
+  <meta name="keywords" content="online tools, free tools, image to pdf, json formatter, toolverses, browser tools, tool site" />
+  <meta name="author" content="ToolVerses" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="ToolVerses - Free Online Tools Hub" />
+  <meta property="og:description" content="Your ultimate destination for fast, free & private browser-based tools." />
+  <meta property="og:image" content="assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ToolVerses - Free Online Tools" />
+  <meta name="twitter:description" content="No downloads. No signups. Just powerful tools in your browser." />
+  <meta name="twitter:image" content="assets/images/preview.jpg" />
+
+  <!-- Styles & Favicon -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/logoimage.png" type="image/png" />
+  <link rel="stylesheet" href="assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex-shrink: 0;
+      background: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 1px solid #dee2e6;
+    }
+    .hover-shadow:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/images/logoimage.png" alt="ToolVerses" class="me-2 nav-logo" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="tools/">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+ <!-- REPLACE your current main section with the following -->
+<main>
+  <!-- Hero Section -->
+  <section class="d-flex align-items-center justify-content-center text-center py-5" style="min-height: 65vh; background: linear-gradient(145deg, #a3c9ff, #d5bfff);">
+    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm w-100" style="max-width: 720px;">
+      <h1 class="fw-bold mb-3">🛠️ Welcome to <span class="text-primary">ToolVerses</span></h1>
+      <p class="lead mb-4">Your ultimate destination for <strong>free, fast & private online tools</strong> — no downloads, no signups, just powerful features that run in your browser.</p>
+      <a href="tools/" class="btn btn-primary btn-lg px-4 fw-semibold">🚀 Explore Tools</a>
+    </div>
+  </section>
+
+  <!-- Tool Categories + Ad Section -->
+  <section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <div class="row">
+        <!-- Left: Categories -->
+        <div class="col-lg-9">
+          <h2 class="fw-semibold mb-4">🛠️ Featured Tool Categories</h2>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-6 d-flex">
+              <a href="tools/image/index.html" class="text-decoration-none w-100">
+                <div class="card shadow-sm text-center p-4 border-0 rounded-4 bg-white hover-shadow h-100">
+                  <div class="mb-2" style="font-size: 2rem;">🖼️</div>
+                  <h5 class="fw-semibold mb-2">Image Tools</h5>
+                  <p class="text-muted small mb-0">
+                    Convert, compress, crop and manage your images — all in your browser.
+                  </p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-6 col-lg-6 d-flex">
+              <a href="#" class="text-decoration-none w-100">
+                <div class="card shadow-sm text-center p-4 border-0 rounded-4 bg-white hover-shadow h-100">
+                  <div class="mb-2" style="font-size: 2rem;">📄</div>
+                  <h5 class="fw-semibold mb-2">PDF Tools</h5>
+                  <p class="text-muted small mb-0">
+                    Convert, merge, split, and handle PDFs online with total privacy.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Ad Section -->
+        <div class="col-lg-3 d-none d-lg-block">
+          <div class="bg-white rounded-4 shadow-sm text-center p-3 h-100">
+            <p class="text-muted small mb-2">Sponsored</p>
+            <div style="width: 100%; height: 250px; background: #e9ecef; border-radius: 8px;">
+              <p class="text-muted small mt-5">Ad Placeholder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

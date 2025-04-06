@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crop and Resize Image Online - ToolVerses</title>
+  <meta name="description" content="Free and private image crop and resize tool. Instantly adjust image dimensions in cm or px without uploading." />
+  <meta name="keywords" content="crop image, resize image, image editor online, px to cm image, toolverses crop resize" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/image/crop-resize.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Crop and Resize Image Online - ToolVerses" />
+  <meta property="og:description" content="Resize and crop your images with pixel or cm units — all browser-based and private." />
+  <meta property="og:image" content="../../assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/image/crop-resize.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Crop and Resize Image Tool - ToolVerses" />
+  <meta name="twitter:description" content="Easily crop and resize images in pixels or centimeters. No upload, 100% private." />
+  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
+
+  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.css" />
+
+  <style>
+    .tool-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+    }
+
+    .upload-area {
+      border: 2px dashed #ced4da;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      background-color: #fdfdfd;
+    }
+
+    #previewImg {
+      max-width: 100%;
+      max-height: 500px;
+    }
+
+    .toggle-btns .btn {
+      margin-right: 0.5rem;
+    }
+
+    #crop-section,
+    #resize-section {
+      display: none;
+    }
+
+    .active-tool {
+      display: block !important;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+          <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a class="nav-link" href="../../about.html">About</a>
+            <a class="nav-link active" href="../">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5" style="background: linear-gradient(145deg, #f4f7fa, #e8ecf1); min-height: 90vh;">
+    <div class="container">
+      <div class="row justify-content-between align-items-start">
+        <div class="mb-3">
+          <a href="../image/index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">← Back</a>
+        </div>
+
+        <!-- TOOL CONTENT -->
+        <div class="col-12 col-lg-9 order-1 order-lg-0">
+          <article class="tool-box mb-4">
+            <h1 class="fw-bold mb-3">✂️ Crop & Resize Image</h1>
+            <p class="text-muted mb-4">Crop and resize your images directly in your browser with pixel or cm precision.</p>
+
+            <div class="upload-area mb-4">
+              <p class="mb-2 fw-semibold">Drag & drop or select an image</p>
+              <input type="file" id="imageInput" accept="image/*" class="form-control" />
+            </div>
+
+            <div class="mb-4 text-center">
+              <button class="btn btn-outline-primary me-2" id="showResize">Resize Mode</button>
+              <button class="btn btn-outline-secondary" id="showCrop">Crop Mode</button>
+            </div>
+
+            <!-- Resize Section -->
+            <div id="resize-section">
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label fw-semibold">Unit:</label>
+                  <div class="toggle-btns">
+                    <button class="btn btn-sm btn-outline-primary" id="togglePx">PX</button>
+                    <button class="btn btn-sm btn-outline-secondary" id="toggleCm">CM</button>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label id="unitLabelW" for="widthInput" class="form-label fw-semibold">Width (px)</label>
+                  <input type="number" id="widthInput" class="form-control" placeholder="e.g. 300" />
+                </div>
+                <div class="col-md-4">
+                  <label id="unitLabelH" for="heightInput" class="form-label fw-semibold">Height (px)</label>
+                  <input type="number" id="heightInput" class="form-control" placeholder="e.g. 200" />
+                </div>
+              </div>
+
+              <div class="mb-4 text-center">
+                <button class="btn btn-success me-2" id="resizeBtn">Resize</button>
+              </div>
+            </div>
+
+            <!-- Crop Section -->
+            <div id="crop-section" class="text-center">
+              
+              <button class="btn btn-primary me-2" id="cropBtn">Crop</button>
+            </div>
+
+            <div class="text-center">
+              <img id="previewImg" src="" alt="Preview" style="display:none;" />
+              <canvas id="canvas" style="display:none;" class="mt-3"></canvas>
+            </div>
+
+            <div class="text-center mt-4" id="downloadSection" style="display: none;">
+              <button id="downloadBtn" class="btn btn-primary me-2">⬇️ Download</button>
+              <button id="resetBtn" class="btn btn-outline-danger">🗑️ Remove</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- ADS SECTION -->
+        <aside class="col-12 col-lg-3 order-2 order-lg-1 mt-4 mt-lg-0">
+          <div class="bg-white rounded-4 shadow-sm text-center p-3 h-100">
+            <p class="text-muted small mb-2">Sponsored</p>
+            <div style="width: 100%; height: 280px; background: #e9ecef; border-radius: 8px;"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.js"></script>
+  <script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/crop-resize.js"></script>
+</body>
+</html>

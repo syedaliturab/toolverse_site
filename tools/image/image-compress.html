@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compress Image Tool - ToolVerses</title>
+  <meta name="description" content="Online image compression tool. Drag & drop to compress and resize images instantly." />
+  <meta name="keywords" content="image compression, compress image, reduce image size, resize image, toolverses" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/image/compress.html" />
+
+  <!-- Social Meta -->
+  <meta property="og:title" content="Compress Image Tool - ToolVerses" />
+  <meta property="og:description" content="Browser-based image compressor. 100% private and free." />
+  <meta property="og:image" content="../../assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/image/compress.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Compress Image Tool - ToolVerses" />
+  <meta name="twitter:description" content="Compress and resize images in seconds directly in your browser." />
+  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
+
+  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .tool-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+    }
+    .upload-box {
+      border: 2px dashed #ced4da;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      background-color: #fdfdfd;
+    }
+    .slider-box label {
+      font-weight: 500;
+    }
+    .image-preview {
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      max-height: 300px;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .sidebar-ad {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    @media (max-width: 991px) {
+      .result-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+          <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a class="nav-link" href="../../about.html">About</a>
+            <a class="nav-link active" href="../">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5" style="background: linear-gradient(145deg, #f4f7fa, #e8ecf1); min-height: 90vh;">
+    <div class="container">
+        <div class="mb-3">
+            <a href="../image/index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3" style="font-size: 0.875rem;">
+              ← Back
+            </a>
+          </div>
+      <div class="row justify-content-between align-items-start">
+        <div class="col-lg-9">
+            <!-- Back Button Row -->
+
+          <div class="tool-container">
+           
+            <h1 class="fw-bold mb-3">🗜️ Image Compression Tool</h1>
+            <p class="text-muted mb-4">Compress and resize images easily. Drag and drop or click to upload.</p>
+
+            <div class="upload-box mb-4" id="upload-box">
+              <p class="mb-2 fw-semibold">Drag and drop or click to upload</p>
+              <input type="file" id="imageInput" accept="image/*" class="form-control" />
+            </div>
+
+            <div class="slider-box mb-3">
+              <label for="compressionSlider">Compression quality: <span id="compressionValue">75</span></label>
+              <input type="range" class="form-range" id="compressionSlider" min="10" max="100" value="75" step="1" />
+            </div>
+
+            <div class="slider-box mb-4">
+              <label for="widthSlider">Image width: <span id="widthValue">1200</span> px</label>
+              <input type="range" class="form-range" id="widthSlider" min="300" max="3000" value="1200" step="10" />
+            </div>
+
+            <button class="btn btn-success w-100 mb-4" id="compressBtn">Compress Image</button>
+
+            <div class="result-row text-center" id="resultRow" style="display: none;">
+              <div>
+                <h6>Original</h6>
+                <img id="originalPreview" class="image-preview" src="" alt="Original" />
+              </div>
+              <div>
+                <h6>Compressed</h6>
+                <img id="compressedPreview" class="image-preview" src="../../assets/images/placeholder.jpg" alt="Compressed" />
+              </div>
+            </div>
+
+            <div class="text-center" id="downloadContainer" style="display: none;">
+              <button class="btn btn-primary btn-sm me-2" id="downloadBtn">⬇️ Download</button>
+              <button class="btn btn-outline-danger btn-sm" id="removeBtn">🗑️ Remove</button>
+             
+            </div>
+          </div>
+         
+        </div>
+
+        <div class="col-lg-3">
+          <div class="sidebar-ad text-center">
+            <p class="text-muted small mb-2">Sponsored</p>
+            <div style="width: 100%; height: 280px; background: #e9ecef; border-radius: 8px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/compress-image.js"></script>
+</body>
+</html>
