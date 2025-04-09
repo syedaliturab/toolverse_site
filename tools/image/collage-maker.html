@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collage Maker - Combine Images into a Collage Online | ToolVerses</title>
+  <meta name="description" content="Free online collage maker to combine multiple photos into creative layouts. Drag, drop, resize, and download your collage instantly." />
+  <meta name="keywords" content="collage maker, photo collage, combine images online, create collage, drag and drop collage tool" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/image/collage.html" />
+
+  <!-- OG & Twitter -->
+  <meta property="og:title" content="Collage Maker - Combine Images into a Collage Online | ToolVerses" />
+  <meta property="og:description" content="Create image collages for free in your browser. Combine photos, arrange them, and download your collage." />
+  <meta property="og:image" content="../../assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/image/collage.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Collage Maker - Combine Images into a Collage Online | ToolVerses" />
+  <meta name="twitter:description" content="Free browser-based tool to make image collages easily and privately." />
+  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
+
+  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .tool-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+    }
+
+    .canvas-wrapper {
+      width: 100%;
+      height: 600px;
+      overflow: auto;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      background: #fff;
+      padding: 10px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .layout-selector {
+      max-width: 300px;
+      margin: 0 auto 1rem auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+          <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a class="nav-link" href="../../about.html">About</a>
+            <a class="nav-link active" href="../">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5" style="background: linear-gradient(145deg, #f4f7fa, #e8ecf1); min-height: 90vh;">
+    <div class="container">
+      <div class="mb-3">
+        <a href="../image/index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">← Back</a>
+      </div>
+      <div class="row justify-content-between">
+        <div class="col-lg-9">
+          <article class="tool-box mb-4">
+            <h1 class="fw-bold mb-3">🖼️ Collage Maker</h1>
+            <p class="text-muted mb-4">Combine multiple images into one — choose from grid, stack, or freeform layout styles.</p>
+
+            <input type="file" id="collageInput" class="form-control mb-3" multiple accept="image/*" />
+
+          
+
+            <div class="canvas-wrapper overflow-auto border rounded p-2" style="max-height: 600px;">
+                <canvas id="collageCanvas" width="1000" height="600"></canvas>
+              </div>
+
+            <div class="controls">
+              <button id="downloadCollage" class="btn btn-primary">📥 Download</button>
+              <button id="clearCanvas" class="btn btn-outline-danger">🗑 Clear All</button>
+            </div>
+          </article>
+        </div>
+
+        <aside class="col-lg-3 d-none d-lg-block">
+          <div class="bg-white rounded-4 shadow-sm text-center p-3 h-100">
+            <p class="text-muted small">Sponsored</p>
+            <div style="width: 100%; height: 280px; background: #e9ecef; border-radius: 8px;"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/collage-maker.js"></script>
+</body>
+</html>

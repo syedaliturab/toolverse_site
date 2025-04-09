@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply Image Filters Online - ToolVerses</title>
+  <meta name="description" content="Free online tool to apply filters like grayscale, blur, contrast, sepia, and more to your images." />
+  <meta name="keywords" content="image filters, grayscale image, blur photo, contrast editor, hue saturation tool" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/image/filters.html" />
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="Apply Image Filters Online - ToolVerses" />
+  <meta property="og:description" content="Free browser-based photo editor with filters like grayscale, sepia, blur, and contrast." />
+  <meta property="og:image" content="../../assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/image/filters.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Apply Image Filters Online - ToolVerses" />
+  <meta name="twitter:description" content="Apply stunning filters to your images securely in your browser." />
+  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
+
+  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <style>
+    .tool-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+    }
+
+    .preview-wrapper {
+      width: 50%;
+      height: 40%;
+      margin: auto;
+    }
+
+    .preview-wrapper img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-slider {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+          <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a class="nav-link" href="../../about.html">About</a>
+            <a class="nav-link active" href="../">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5" style="background: linear-gradient(145deg, #f4f7fa, #e8ecf1); min-height: 90vh;">
+    <div class="container">
+      <div class="mb-3">
+        <a href="../image/index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3" style="font-size: 0.875rem;">
+          ← Back
+        </a>
+      </div>
+
+      <div class="row">
+        <!-- Tool Section -->
+        <div class="col-12 col-lg-9 order-1 order-lg-1">
+          <article class="tool-box mb-4">
+            <h1 class="fw-bold mb-3">🎨 Image Filters & Effects</h1>
+            <p class="text-muted mb-4">Apply filters like grayscale, sepia, blur, hue, contrast, and saturation — 100% browser-based.</p>
+
+            <input type="file" id="imageInput" class="form-control mb-4" accept="image/*"/>
+
+            <div id="preview-container" class="text-center mb-4" style="display:none;">
+              <div class="preview-wrapper mb-4">
+                <img id="preview-image" src="" alt="Filtered Image" />
+              </div>
+
+              <div class="row filter-slider">
+                <div class="col-sm-6">
+                  <label>Grayscale</label>
+                  <input type="range" id="grayscale" min="0" max="100" value="0" class="form-range"/>
+                </div>
+                <div class="col-sm-6">
+                  <label>Sepia</label>
+                  <input type="range" id="sepia" min="0" max="100" value="0" class="form-range"/>
+                </div>
+              </div>
+              <div class="row filter-slider">
+                <div class="col-sm-6">
+                  <label>Blur (px)</label>
+                  <input type="range" id="blur" min="0" max="10" value="0" class="form-range"/>
+                </div>
+                <div class="col-sm-6">
+                  <label>Contrast (%)</label>
+                  <input type="range" id="contrast" min="0" max="200" value="100" class="form-range"/>
+                </div>
+              </div>
+              <div class="row filter-slider">
+                <div class="col-sm-6">
+                  <label>Hue-Rotate (deg)</label>
+                  <input type="range" id="hue" min="0" max="360" value="0" class="form-range"/>
+                </div>
+                <div class="col-sm-6">
+                  <label>Saturation (%)</label>
+                  <input type="range" id="saturation" min="0" max="300" value="100" class="form-range"/>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center gap-2">
+                <button id="downloadBtn" class="btn btn-primary">📥 Download</button>
+                <button id="removeBtn" class="btn btn-outline-danger">🗑 Remove</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Ads Section -->
+        <div class="col-12 col-lg-3 order-2 order-lg-2 mt-4 mt-lg-0">
+          <aside class="bg-white rounded-4 shadow-sm p-3 text-center h-100">
+            <p class="text-muted small">Sponsored</p>
+            <div style="width: 100%; height: 280px; background: #f1f3f5; border-radius: 8px;"></div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/image-filters.js"></script>
+</body>
+</html>
