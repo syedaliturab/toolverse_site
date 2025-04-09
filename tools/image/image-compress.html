@@ -1,71 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compress Image Tool - ToolVerses</title>
-  <meta name="description" content="Online image compression tool. Drag & drop to compress and resize images instantly." />
-  <meta name="keywords" content="image compression, compress image, reduce image size, resize image, toolverses" />
-  <meta name="author" content="ToolVerses" />
-  <link rel="canonical" href="https://toolverses.com/tools/image/compress.html" />
-
-  <!-- Social Meta -->
-  <meta property="og:title" content="Compress Image Tool - ToolVerses" />
-  <meta property="og:description" content="Browser-based image compressor. 100% private and free." />
-  <meta property="og:image" content="../../assets/images/preview.jpg" />
-  <meta property="og:url" content="https://toolverses.com/tools/image/compress.html" />
-  <meta property="og:type" content="website" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Compress Image Tool - ToolVerses" />
-  <meta name="twitter:description" content="Compress and resize images in seconds directly in your browser." />
-  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
-
-  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
-  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <style>
-    .tool-container {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      padding: 2rem;
-    }
-    .upload-box {
-      border: 2px dashed #ced4da;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      background-color: #fdfdfd;
-    }
-    .slider-box label {
-      font-weight: 500;
-    }
-    .image-preview {
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1rem;
-      max-height: 300px;
-    }
-    .result-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .sidebar-ad {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-    @media (max-width: 991px) {
-      .result-row {
-        flex-direction: column;
-        align-items: center;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Compress Image Tool - Reduce File Size Instantly | ToolVerses</title>
+  
+    <!-- 🔍 SEO Meta -->
+    <meta name="description" content="Online image compression tool. Compress and resize JPG, PNG, or WebP images instantly in your browser. No uploads, no tracking." />
+    <meta name="keywords" content="image compression, compress image, reduce image size, resize image, compress jpg, compress png, online image tool, toolverses" />
+    <meta name="author" content="ToolVerses" />
+    <link rel="canonical" href="https://www.toolverses.com/tools/image/compress.html" />
+  
+    <!-- 🌐 Favicon & App -->
+    <link rel="icon" href="/assets/images/logoimage.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+    <meta name="application-name" content="ToolVerses" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- 📘 Open Graph -->
+    <meta property="og:title" content="Compress Image Tool - Reduce File Size Instantly | ToolVerses" />
+    <meta property="og:description" content="Browser-based image compressor. Shrink image files without uploading. Fast, free, and private." />
+    <meta property="og:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+    <meta property="og:url" content="https://www.toolverses.com/tools/image/compress.html" />
+    <meta property="og:type" content="website" />
+  
+    <!-- 🐦 Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Compress Image Online - ToolVerses" />
+    <meta name="twitter:description" content="Compress and resize your images in seconds with zero upload. 100% browser-based tool." />
+    <meta name="twitter:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+  
+    <!-- 🧠 Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Image Compression Tool - ToolVerses",
+      "url": "https://www.toolverses.com/tools/image/compress.html",
+      "applicationCategory": "ImageApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "JavaScript enabled",
+      "description": "Compress and resize images instantly without uploading. Supports JPG, PNG, and WebP.",
+      "image": "https://www.toolverses.com/assets/images/preview.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
     }
-  </style>
-</head>
+    </script>
+  
+    <!-- 📦 Stylesheets -->
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  
+    <!-- 🎨 Custom Styles -->
+    <style>
+      .tool-container {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 2rem;
+      }
+      .upload-box {
+        border: 2px dashed #ced4da;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        background-color: #fdfdfd;
+      }
+      .slider-box label {
+        font-weight: 500;
+      }
+      .image-preview {
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+        max-height: 300px;
+      }
+      .result-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .sidebar-ad {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      @media (max-width: 991px) {
+        .result-row {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">

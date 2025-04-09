@@ -1,100 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Watermark to Images Online - ToolVerses</title>
-  <meta name="description" content="Free online tool to add text or image watermark to your photos. 100% private and browser-based." />
-  <meta name="keywords" content="add watermark, image watermark tool, text watermark, photo watermark, watermark image online" />
-  <meta name="author" content="ToolVerses" />
-  <link rel="canonical" href="https://toolverses.com/tools/image/watermark.html" />
-
-  <!-- Open Graph Meta -->
-  <meta property="og:title" content="Add Watermark to Images Online - ToolVerses" />
-  <meta property="og:description" content="Browser-based tool to watermark your images with text or image. Secure and free." />
-  <meta property="og:image" content="../../assets/images/preview.jpg" />
-  <meta property="og:url" content="https://toolverses.com/tools/image/watermark.html" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Meta -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Add Watermark to Images Online - ToolVerses" />
-  <meta name="twitter:description" content="Add watermark to photos securely in your browser." />
-  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
-
-  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
-  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-
-  <style>
-    .tool-box {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      padding: 2rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Watermark to Images Online - ToolVerses</title>
+  
+    <!-- ✅ SEO -->
+    <meta name="description" content="Free online tool to add text or image watermark to your photos. 100% private and browser-based." />
+    <meta name="keywords" content="add watermark, image watermark tool, text watermark, photo watermark, watermark image online, toolverses" />
+    <meta name="author" content="ToolVerses" />
+    <link rel="canonical" href="https://www.toolverses.com/tools/image/watermark.html" />
+  
+    <!-- 🌐 Favicon & Web App -->
+    <link rel="icon" href="/assets/images/logoimage.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+    <meta name="application-name" content="ToolVerses" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- 📘 Open Graph -->
+    <meta property="og:title" content="Add Watermark to Images Online - ToolVerses" />
+    <meta property="og:description" content="Browser-based tool to watermark your images with text or image. Secure and free." />
+    <meta property="og:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+    <meta property="og:url" content="https://www.toolverses.com/tools/image/watermark.html" />
+    <meta property="og:type" content="website" />
+  
+    <!-- 🐦 Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Add Watermark to Images Online - ToolVerses" />
+    <meta name="twitter:description" content="Add watermark to photos securely in your browser." />
+    <meta name="twitter:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+  
+    <!-- 🧠 Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Watermark Image Tool - ToolVerses",
+      "url": "https://www.toolverses.com/tools/image/watermark.html",
+      "applicationCategory": "ImageEditingApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "JavaScript enabled",
+      "description": "Free online tool to add text or image watermark to your photos. 100% private and browser-based.",
+      "image": "https://www.toolverses.com/assets/images/preview.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     }
-
-    .upload-area {
-      border: 2px dashed #ced4da;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      transition: 0.2s ease;
-      background-color: #fdfdfd;
-    }
-
-    .upload-area.dragover {
-      background-color: #f1f5ff;
-      border-color: #86b7fe;
-    }
-
-    .preview-wrapper {
-      position: relative;
-      display: inline-block;
-      max-width: 100%;
-      width: fit-content;
-    }
-
-    #uploaded-image {
-      max-height: 600px;
-      width: auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    #draggable-watermark {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-weight: bold;
-      cursor: move;
-      user-select: none;
-      text-shadow: 1px 1px 2px black;
-      z-index: 10;
-      padding: 4px 10px;
-      background: transparent;
-      border: 1px dashed #888;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      color: #fff;
-    }
-
-    #draggable-watermark:hover {
-      box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
-    }
-
-    #draggable-watermark-img {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      max-width: 100px;
-      cursor: move;
-      z-index: 10;
-      display: none;
-    }
-  </style>
-</head>
+    </script>
+  
+    <!-- 📦 CSS -->
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  
+    <!-- 🎨 Custom Style -->
+    <style>
+      .tool-box {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 2rem;
+      }
+  
+      .upload-area {
+        border: 2px dashed #ced4da;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        transition: 0.2s ease;
+        background-color: #fdfdfd;
+      }
+  
+      .upload-area.dragover {
+        background-color: #f1f5ff;
+        border-color: #86b7fe;
+      }
+  
+      .preview-wrapper {
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        width: fit-content;
+      }
+  
+      #uploaded-image {
+        max-height: 600px;
+        width: auto;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      }
+  
+      #draggable-watermark {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-weight: bold;
+        cursor: move;
+        user-select: none;
+        text-shadow: 1px 1px 2px black;
+        z-index: 10;
+        padding: 4px 10px;
+        background: transparent;
+        border: 1px dashed #888;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        color: #fff;
+      }
+  
+      #draggable-watermark:hover {
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+      }
+  
+      #draggable-watermark-img {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        max-width: 100px;
+        cursor: move;
+        z-index: 10;
+        display: none;
+      }
+  
+      @media (max-width: 768px) {
+        #uploaded-image {
+          max-height: 400px;
+          width: 100%;
+        }
+        #draggable-watermark-img {
+          max-width: 70px;
+        }
+      }
+    </style>
+  </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">

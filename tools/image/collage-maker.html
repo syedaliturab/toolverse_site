@@ -1,60 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collage Maker - Combine Images into a Collage Online | ToolVerses</title>
-  <meta name="description" content="Free online collage maker to combine multiple photos into creative layouts. Drag, drop, resize, and download your collage instantly." />
-  <meta name="keywords" content="collage maker, photo collage, combine images online, create collage, drag and drop collage tool" />
-  <meta name="author" content="ToolVerses" />
-  <link rel="canonical" href="https://toolverses.com/tools/image/collage.html" />
-
-  <!-- OG & Twitter -->
-  <meta property="og:title" content="Collage Maker - Combine Images into a Collage Online | ToolVerses" />
-  <meta property="og:description" content="Create image collages for free in your browser. Combine photos, arrange them, and download your collage." />
-  <meta property="og:image" content="../../assets/images/preview.jpg" />
-  <meta property="og:url" content="https://toolverses.com/tools/image/collage.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Collage Maker - Combine Images into a Collage Online | ToolVerses" />
-  <meta name="twitter:description" content="Free browser-based tool to make image collages easily and privately." />
-  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
-
-  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
-  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <style>
-    .tool-box {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      padding: 2rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collage Maker - Combine Images into a Collage Online | ToolVerses</title>
+  
+    <!-- ✅ SEO Meta -->
+    <meta name="description" content="Free online collage maker to combine multiple photos into creative layouts. Drag, drop, resize, and download your collage instantly." />
+    <meta name="keywords" content="collage maker, photo collage, combine images online, create collage, drag and drop collage tool, toolverses" />
+    <meta name="author" content="ToolVerses" />
+    <link rel="canonical" href="https://www.toolverses.com/tools/image/collage.html" />
+  
+    <!-- 🌐 Favicon & Web App Meta -->
+    <link rel="icon" href="/assets/images/logoimage.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+    <meta name="application-name" content="ToolVerses" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- 📘 Open Graph -->
+    <meta property="og:title" content="Collage Maker - Combine Images into a Collage Online | ToolVerses" />
+    <meta property="og:description" content="Create image collages for free in your browser. Combine photos, arrange them, and download your collage." />
+    <meta property="og:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+    <meta property="og:url" content="https://www.toolverses.com/tools/image/collage.html" />
+    <meta property="og:type" content="website" />
+  
+    <!-- 🐦 Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Collage Maker - Combine Images into a Collage Online | ToolVerses" />
+    <meta name="twitter:description" content="Free browser-based tool to make image collages easily and privately." />
+    <meta name="twitter:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+  
+    <!-- 🧠 Structured Data (SoftwareApplication) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Collage Maker - ToolVerses",
+      "url": "https://www.toolverses.com/tools/image/collage.html",
+      "applicationCategory": "ImageApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "JavaScript enabled",
+      "description": "Free online collage maker to combine multiple photos into creative layouts. Drag, drop, resize, and download your collage instantly.",
+      "image": "https://www.toolverses.com/assets/images/preview.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     }
-
-    .canvas-wrapper {
-      width: 100%;
-      height: 600px;
-      overflow: auto;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      border: 2px dashed #ccc;
-      border-radius: 8px;
-      background: #fff;
-      padding: 10px;
-    }
-
-    .controls {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .layout-selector {
-      max-width: 300px;
-      margin: 0 auto 1rem auto;
-    }
-  </style>
-</head>
+    </script>
+  
+    <!-- 📦 CSS -->
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <style>
+      .tool-box {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 2rem;
+      }
+  
+      .canvas-wrapper {
+        width: 100%;
+        height: 600px;
+        overflow: auto;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        background: #fff;
+        padding: 10px;
+      }
+  
+      .controls {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+  
+      .layout-selector {
+        max-width: 300px;
+        margin: 0 auto 1rem auto;
+      }
+    </style>
+  </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">

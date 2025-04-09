@@ -1,63 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Convert PNG, WebP, or Images to JPG Online - ToolVerses</title>
-  <meta name="description" content="Free, fast, and private tool to convert PNG, WebP, and other image formats to JPG — right in your browser. No uploads, no limits." />
-  <meta name="keywords" content="convert image to jpg, png to jpg, webp to jpg, online image converter, jpg tool, image format converter" />
-  <meta name="author" content="ToolVerses" />
-  <link rel="canonical" href="https://toolverses.com/tools/image/image-to-jpg.html" />
-
-  <!-- Social Meta -->
-  <meta property="og:title" content="Convert PNG, WebP, or Images to JPG Online - ToolVerses" />
-  <meta property="og:description" content="Browser-based tool to convert images to JPG instantly. 100% private and free." />
-  <meta property="og:image" content="../../assets/images/preview.jpg" />
-  <meta property="og:url" content="https://toolverses.com/tools/image/image-to-jpg.html" />
-  <meta property="og:type" content="website" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Convert Image to JPG - ToolVerses" />
-  <meta name="twitter:description" content="Fast, private JPG image conversion directly in your browser." />
-  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
-
-  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
-  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-
-  <style>
-    .tool-box {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      padding: 2rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert PNG, WebP, or Images to JPG Online - ToolVerses</title>
+    <meta name="description" content="Free, fast, and private tool to convert PNG, WebP, and other image formats to JPG — right in your browser. No uploads, no limits." />
+    <meta name="keywords" content="convert image to jpg, png to jpg, webp to jpg, online image converter, jpg tool, image format converter, toolverses" />
+    <meta name="author" content="ToolVerses" />
+    <link rel="canonical" href="https://www.toolverses.com/tools/image/image-to-jpg.html" />
+  
+    <!-- 🔧 Favicon & Brand Meta -->
+    <link rel="icon" href="/assets/images/logoimage.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+    <meta name="application-name" content="ToolVerses" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- 🔗 Open Graph -->
+    <meta property="og:title" content="Convert PNG, WebP, or Images to JPG Online - ToolVerses" />
+    <meta property="og:description" content="Browser-based tool to convert images to JPG instantly. 100% private and free." />
+    <meta property="og:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+    <meta property="og:url" content="https://www.toolverses.com/tools/image/image-to-jpg.html" />
+    <meta property="og:type" content="website" />
+  
+    <!-- 🐦 Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Convert Image to JPG - ToolVerses" />
+    <meta name="twitter:description" content="Fast, private JPG image conversion directly in your browser." />
+    <meta name="twitter:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+  
+    <!-- 🧠 Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Image to JPG Converter - ToolVerses",
+      "url": "https://www.toolverses.com/tools/image/image-to-jpg.html",
+      "applicationCategory": "ImageApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "JavaScript enabled",
+      "description": "Convert PNG, WebP, and other images to JPG online — instantly, securely, and privately in your browser.",
+      "image": "https://www.toolverses.com/assets/images/preview.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     }
-
-    .upload-area {
-      border: 2px dashed #ced4da;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      transition: 0.2s ease;
-    }
-
-    .upload-area.dragover {
-      background-color: #f1f5ff;
-      border-color: #86b7fe;
-    }
-
-    #canvas {
-      display: none;
-      max-width: 100%;
-      max-height: 400px;
-      margin-top: 1.5rem;
-      border-radius: 10px;
-      object-fit: contain;
-      background: #f8f9fa;
-    }
-  </style>
-</head>
+    </script>
+  
+    <!-- 📦 Styles & JS Libraries -->
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
+ 
+  
+    <!-- 🎨 Custom Styles -->
+    <style>
+      .tool-box {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 2rem;
+      }
+      .upload-area {
+        border: 2px dashed #ced4da;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        transition: 0.2s ease;
+      }
+      .upload-area.dragover {
+        background-color: #f1f5ff;
+        border-color: #86b7fe;
+      }
+      #canvas {
+        display: none;
+        max-width: 100%;
+        max-height: 400px;
+        margin-top: 1.5rem;
+        border-radius: 10px;
+        object-fit: contain;
+        background: #f8f9fa;
+      }
+    </style>
+  </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">

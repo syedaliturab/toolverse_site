@@ -1,53 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rotate Images Online - Free & Instant | ToolVerses</title>
-  <meta name="description" content="Rotate JPG, PNG, or WebP images left or right online. No upload, 100% private and browser-based." />
-  <meta name="keywords" content="rotate image online, image rotator, rotate jpg png webp, no upload tool, browser image editor" />
-  <meta name="author" content="ToolVerses" />
-  <link rel="canonical" href="https://toolverses.com/tools/image/rotate-image.html" />
-  <meta property="og:title" content="Rotate Image Online - Free & Private | ToolVerses" />
-  <meta property="og:description" content="Rotate your images left or right instantly. 100% browser-based and secure." />
-  <meta property="og:image" content="../../assets/images/preview.jpg" />
-  <meta property="og:url" content="https://toolverses.com/tools/image/rotate-image.html" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rotate Images Online - ToolVerses" />
-  <meta name="twitter:description" content="Rotate images instantly in your browser. Secure and upload-free." />
-  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
-
-  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
-  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-
-  <style>
-    .tool-box {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      padding: 2rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotate Images Online - Free & Instant | ToolVerses</title>
+    <meta name="description" content="Rotate JPG, PNG, or WebP images left or right online. No upload, 100% private and browser-based." />
+    <meta name="keywords" content="rotate image online, image rotator, rotate jpg png webp, no upload tool, browser image editor" />
+    <meta name="author" content="ToolVerses" />
+    <link rel="canonical" href="https://www.toolverses.com/tools/image/rotate-image.html" />
+  
+    <!-- 🔧 Favicon & Icons -->
+    <link rel="icon" href="/assets/images/logoimage.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+    <meta name="application-name" content="ToolVerses" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- 🔗 Open Graph -->
+    <meta property="og:title" content="Rotate Image Online - Free & Private | ToolVerses" />
+    <meta property="og:description" content="Rotate your images left or right instantly. 100% browser-based and secure." />
+    <meta property="og:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+    <meta property="og:url" content="https://www.toolverses.com/tools/image/rotate-image.html" />
+    <meta property="og:type" content="website" />
+  
+    <!-- 🐦 Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rotate Images Online - ToolVerses" />
+    <meta name="twitter:description" content="Rotate images instantly in your browser. Secure and upload-free." />
+    <meta name="twitter:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+  
+    <!-- 🧠 Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ToolVerses - Rotate Image Tool",
+      "url": "https://www.toolverses.com/tools/image/rotate-image.html",
+      "applicationCategory": "PhotoApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Runs in browser.",
+      "description": "Rotate JPG, PNG, or WebP images left or right with zero upload. Fast, private, browser-based tool.",
+      "image": "https://www.toolverses.com/assets/images/preview.jpg"
     }
-    .upload-area {
-      border: 2px dashed #ced4da;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      transition: 0.2s ease;
-    }
-    .upload-area.dragover {
-      background-color: #f1f5ff;
-      border-color: #86b7fe;
-    }
-    .preview-box img {
-      max-height: 300px;
-      object-fit: contain;
-    }
-  </style>
-</head>
+    </script>
+  
+    <!-- 📦 Styles & JS -->
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  
+    <!-- 🎨 Page-specific styles -->
+    <style>
+      .tool-box {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 2rem;
+      }
+      .upload-area {
+        border: 2px dashed #ced4da;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        transition: 0.2s ease;
+      }
+      .upload-area.dragover {
+        background-color: #f1f5ff;
+        border-color: #86b7fe;
+      }
+      .preview-box img {
+        max-height: 300px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">

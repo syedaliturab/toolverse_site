@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+        <title>Edit PDF Online - Draw, eSign, Add Image | ToolVerses</title>
+        <meta name="description" content="Edit PDF online for free. Draw, eSign, or add watermark images in-browser. No uploads or registration required." />
+        <meta name="keywords" content="edit pdf, draw on pdf, sign pdf, add watermark, free pdf editor, pdf markup, toolverses" />
+        <meta name="author" content="ToolVerses" />
+        <link rel="canonical" href="https://www.toolverses.com/tools/pdf/edit-pdf.html" />
+      
+        <!-- 🔧 Favicon & Icons -->
+        <link rel="icon" href="/assets/images/logoimage.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+        <meta name="application-name" content="ToolVerses" />
+        <meta name="theme-color" content="#ffffff" />
+      
+        <!-- 🔗 Open Graph -->
+        <meta property="og:title" content="Edit PDF Online - ToolVerses" />
+        <meta property="og:description" content="Free PDF editor: Draw, add text, and watermark images in-browser. Private and fast." />
+        <meta property="og:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+        <meta property="og:url" content="https://www.toolverses.com/tools/pdf/edit-pdf.html" />
+        <meta property="og:type" content="website" />
+      
+        <!-- 🐦 Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Edit PDF - Draw or Sign in Browser" />
+        <meta name="twitter:description" content="ToolVerses lets you draw or sign PDFs in-browser. 100% private, free, and fast." />
+        <meta name="twitter:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+      
+        <!-- 🧠 Structured Data (Logo) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "url": "https://www.toolverses.com",
+          "logo": "https://www.toolverses.com/assets/images/logoimage.png"
+        }
+        </script>
+      
+      
+        <!-- CSS & Libraries -->
+        <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../assets/css/style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+      
+        <!-- Component Styles -->
+        <style>
+          #canvasContainer {
+            position: relative;
+            margin-top: 1rem;
+            overflow: auto;
+          }
+          .draggable-box {
+            position: absolute;
+            border: 1px dashed #888;
+            background-color: #fff;
+            resize: both;
+            overflow: hidden;
+            min-width: 100px;
+            min-height: 40px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+          }
+          .draggable-box span {
+            font-size: 24px;
+            transform-origin: center center;
+            user-select: none;
+            white-space: nowrap;
+            pointer-events: none;
+          }
+          .close-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 20px;
+            height: 20px;
+            font-size: 14px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 20;
+            font-weight: bold;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+          }
+        </style>
+      </head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+          <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a class="nav-link" href="../../about.html">About</a>
+            <a class="nav-link active" href="../">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5" style="background: #f4f7fa; min-height: 90vh;">
+    <div class="container">
+      <div class="row justify-content-start">
+        <div class="mb-3">
+            <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3" style="font-size: 0.875rem;">
+              ← Back
+            </a>
+          </div>
+        <div class="col-12 col-lg-10">
+          <div class="tool-box">
+            <h1 class="fw-bold mb-3">✍️ Edit PDF</h1>
+            <p class="text-muted mb-4">Draw, sign, or watermark your PDF in-browser — free and private.</p>
+
+            <div class="mb-3">
+              <input type="file" id="pdfInput" accept="application/pdf" class="form-control" />
+            </div>
+
+            <!-- Inside your toolPanel div -->
+            <button id="drawTool" class="btn btn-primary btn-sm me-2">✏️ Draw</button>
+
+            <label for="penColor" class="d-inline-flex align-items-center me-2">
+              🖍️ 
+              <input type="color" id="penColor" value="#d62828"
+                     class="form-control form-control-color ms-1"
+                     title="Choose pencil color" />
+            </label>
+            
+            <button id="textTool" class="btn btn-secondary btn-sm me-2">🖊️ Add Text</button>
+            
+            <input type="text" id="textInput" placeholder="Type your text"
+                   class="form-control form-control-sm w-auto d-inline-block me-2" style="display: none;" />
+            
+            <input type="number" id="textSize" value="16" min="8" max="72"
+                   class="form-control form-control-sm w-auto d-inline-block me-2" style="display: none;" />
+            
+            <button id="imageTool" class="btn btn-info btn-sm me-2">🖼️ Add Image</button>
+            
+            <input type="file" id="imageInput" accept="image/*" style="display: none;" />
+            
+            <button class="btn btn-success btn-sm" id="downloadBtn">⬇️ Download Edited PDF</button>
+
+            <div id="canvasContainer"></div>
+            <div id="status" class="text-muted small mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/pdf/edit-pdf.js"></script>
+</body>
+</html>

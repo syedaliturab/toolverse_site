@@ -1,56 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Apply Image Filters Online - ToolVerses</title>
-  <meta name="description" content="Free online tool to apply filters like grayscale, blur, contrast, sepia, and more to your images." />
-  <meta name="keywords" content="image filters, grayscale image, blur photo, contrast editor, hue saturation tool" />
-  <meta name="author" content="ToolVerses" />
-  <link rel="canonical" href="https://toolverses.com/tools/image/filters.html" />
-
-  <!-- Open Graph Meta -->
-  <meta property="og:title" content="Apply Image Filters Online - ToolVerses" />
-  <meta property="og:description" content="Free browser-based photo editor with filters like grayscale, sepia, blur, and contrast." />
-  <meta property="og:image" content="../../assets/images/preview.jpg" />
-  <meta property="og:url" content="https://toolverses.com/tools/image/filters.html" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Meta -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Apply Image Filters Online - ToolVerses" />
-  <meta name="twitter:description" content="Apply stunning filters to your images securely in your browser." />
-  <meta name="twitter:image" content="../../assets/images/preview.jpg" />
-
-  <link rel="icon" href="../../assets/images/logoimage.png" type="image/png" />
-  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-
-  <style>
-    .tool-box {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      padding: 2rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Apply Image Filters Online - ToolVerses</title>
+    <meta name="description" content="Free online tool to apply filters like grayscale, blur, contrast, sepia, hue rotation, and saturation to your images. 100% private and browser-based." />
+    <meta name="keywords" content="image filters, grayscale image, blur photo, contrast editor, hue saturation tool, photo effects, online image editor, toolverses" />
+    <meta name="author" content="ToolVerses" />
+    <link rel="canonical" href="https://www.toolverses.com/tools/image/filters.html" />
+  
+    <!-- 🔧 Favicon & Brand Meta -->
+    <link rel="icon" href="/assets/images/logoimage.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+    <meta name="application-name" content="ToolVerses" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- 🔗 Open Graph -->
+    <meta property="og:title" content="Apply Image Filters Online - ToolVerses" />
+    <meta property="og:description" content="Free browser-based photo editor with filters like grayscale, sepia, blur, hue rotation, and contrast." />
+    <meta property="og:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+    <meta property="og:url" content="https://www.toolverses.com/tools/image/filters.html" />
+    <meta property="og:type" content="website" />
+  
+    <!-- 🐦 Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Apply Image Filters Online - ToolVerses" />
+    <meta name="twitter:description" content="Apply stunning filters to your images securely in your browser — grayscale, sepia, blur, hue, and more." />
+    <meta name="twitter:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+  
+    <!-- 🧠 Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Image Filters - ToolVerses",
+      "url": "https://www.toolverses.com/tools/image/filters.html",
+      "applicationCategory": "ImageApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "JavaScript enabled",
+      "description": "Apply filters like grayscale, sepia, hue-rotate, blur, contrast, and saturation to your images online.",
+      "image": "https://www.toolverses.com/assets/images/preview.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     }
-
-    .preview-wrapper {
-      width: 50%;
-      height: 40%;
-      margin: auto;
-    }
-
-    .preview-wrapper img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .filter-slider {
-      margin-bottom: 1.5rem;
-    }
-  </style>
-</head>
+    </script>
+  
+    <!-- 📦 Styles & JS Libraries -->
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="/assets/js/image-filters.js" defer></script>
+  
+    <!-- 🎨 Custom Styles -->
+    <style>
+      .tool-box {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 2rem;
+      }
+  
+      .preview-wrapper {
+        width: 50%;
+        height: auto;
+        margin: auto;
+      }
+  
+      .preview-wrapper img {
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      .filter-slider {
+        margin-bottom: 1.5rem;
+      }
+    </style>
+  </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">
