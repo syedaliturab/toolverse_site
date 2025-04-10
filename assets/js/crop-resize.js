@@ -1,14 +1,9 @@
-
-// Final clean version with fixes for:
-// 1. Initial resize mode auto-processing
-// 2. Aspect ratio dropdown parsing
-// 3. Infinite flicker loop prevention
-
 document.addEventListener("DOMContentLoaded", function () {
   const dpi = 96;
   let unit = "px";
   let currentImage = null;
   let cropper = null;
+  let originalMimeType = 'image/jpeg';  // Default to JPEG
 
   const imageInput = document.getElementById("imageInput");
   const togglePx = document.getElementById("togglePx");
@@ -133,6 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
           previewImg.style.display = "block";
           destroyCropper();
 
+          // Set the original mime type for the image
+          originalMimeType = file.type;
+
           // Auto-resize on load
           let drawW = unit === "cm" ? (w * dpi) / 2.54 : w;
           let drawH = unit === "cm" ? (h * dpi) / 2.54 : h;
@@ -143,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-          const dataURL = canvas.toDataURL("image/jpeg", 1.0);
+          const dataURL = canvas.toDataURL(originalMimeType, 1.0); // Using the original mime type
           previewImg.src = dataURL;
           previewImg.style.display = "block";
           currentImage = new Image();
@@ -182,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(currentImage, 0, 0, canvas.width, canvas.height);
 
-    const dataURL = canvas.toDataURL("image/jpeg", 1.0);
+    const dataURL = canvas.toDataURL(originalMimeType, 1.0); // Using the original mime type
     previewImg.src = dataURL;
     previewImg.style.display = "block";
     currentImage = new Image();
@@ -195,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!cropper) return;
     const canvasData = cropper.getCroppedCanvas();
     if (!canvasData) return;
-    const dataURL = canvasData.toDataURL("image/jpeg", 1.0);
+    const dataURL = canvasData.toDataURL(originalMimeType, 1.0); // Using the original mime type
     previewImg.src = dataURL;
     previewImg.style.display = "block";
 
@@ -207,6 +205,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     downloadSection.style.display = "block";
     destroyCropper();
+
+    // Switch back to resize mode after crop
+    resizeSection.classList.add("active-tool");
+    cropSection.classList.remove("active-tool");
   });
 
   function destroyCropper() {
@@ -218,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   downloadBtn.addEventListener("click", () => {
     const link = document.createElement("a");
-    link.download = "image.jpg";
+    link.download = `image.${originalMimeType === "image/png" ? "png" : "jpg"}`; // Use the correct extension based on mime type
     link.href = previewImg.src;
     link.click();
   });

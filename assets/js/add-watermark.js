@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const watermarkSizeSlider = document.getElementById("watermarkSize");
   const watermarkColorInput = document.getElementById("watermarkColor");
   const watermarkOpacitySlider = document.getElementById("watermarkOpacity");
-  
+
   const sizeValue = document.getElementById("sizeValue");
   const downloadBtn = document.getElementById("downloadAllBtn");
   const resetBtn = document.getElementById("resetAllBtn");
@@ -17,6 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const uploadArea = document.getElementById("upload-area");
 
   let uploadedFile = null;
+  let originalMimeType = "image/png"; // default fallback
+
+  // Track the original mime type
+  imageInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      uploadedFile = file;
+      originalMimeType = file.type; // track original type
+    }
+  });
 
   function updateTextProperties() {
     document.getElementById("watermark-content").textContent = watermarkTextInput.value || "ToolVerses";
@@ -71,6 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
       previewWrapper.style.display = "inline-block";
       controls.style.display = "block";
       updateTextProperties();
+
+      // Ensure the image is loaded before proceeding
+      uploadedImage.onload = function () {
+        controls.style.display = "block";  // Only show the controls once the image is fully loaded
+      };
     };
     reader.readAsDataURL(file);
   }
@@ -124,17 +139,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   downloadBtn.addEventListener("click", () => {
-    if (!uploadedImage.src) return;
-
+    // Ensure the uploaded image is fully loaded
+    if (!uploadedImage.src || !uploadedImage.complete || uploadedImage.naturalWidth === 0) {
+      alert("Image is not fully loaded yet. Please try again.");
+      return;
+    }
+  
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = uploadedImage.naturalWidth;
     canvas.height = uploadedImage.naturalHeight;
     ctx.drawImage(uploadedImage, 0, 0);
-
+  
     const scaleX = canvas.width / uploadedImage.clientWidth;
     const scaleY = canvas.height / uploadedImage.clientHeight;
-
+  
     // Text Watermark
     const x = draggableText.offsetLeft * scaleX;
     const y = draggableText.offsetTop * scaleY;
@@ -143,15 +162,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const color = watermarkColorInput.value;
     const opacity = parseFloat(watermarkOpacitySlider.value);
     ctx.globalAlpha = opacity;
-
+  
     ctx.font = `${fontSize}px sans-serif`;
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
     ctx.fillStyle = color;
     ctx.fillText(text, x, y);
-
-    // Image Watermark
-    if (draggableImage.src && draggableImage.style.display !== "none") {
+  
+    // Create the download link
+    const link = document.createElement("a");
+  
+    // Image Watermark (only if the image watermark exists and is visible)
+    if (draggableImage.src && draggableImage.style.display !== "none" && draggableImage.style.display !== "" && draggableImage.style.display !== "") {
       const img = new Image();
       img.onload = function () {
         const imgX = draggableImage.offsetLeft * scaleX;
@@ -159,22 +181,25 @@ document.addEventListener("DOMContentLoaded", function () {
         const imgW = draggableImage.offsetWidth * scaleX;
         const imgH = draggableImage.offsetHeight * scaleY;
         ctx.drawImage(img, imgX, imgY, imgW, imgH);
-
-        canvas.toBlob(blob => {
-          const link = document.createElement("a");
+  
+        canvas.toBlob(function(blob) {
+          // Determine the extension based on MIME type
+          const ext = originalMimeType === "image/png" ? "png" : (originalMimeType === "image/jpeg" ? "jpg" : "jpg");
           link.href = URL.createObjectURL(blob);
-          link.download = "watermarked_image.png";
+          link.download = `watermarked_image.${ext}`;  // Use correct extension
           link.click();
-        }, "image/png");
+        }, originalMimeType);
       };
-      img.src = draggableImage.src;
+      img.src = draggableImage.src;  // Ensure watermark image is loaded before drawing
     } else {
-      canvas.toBlob(blob => {
-        const link = document.createElement("a");
+      // No watermark image, just download the main image
+      canvas.toBlob(function(blob) {
+        // Default to JPG for non-PNG/JPEG images
+        const ext = originalMimeType === "image/png" ? "png" : (originalMimeType === "image/jpeg" ? "jpg" : "jpg");
         link.href = URL.createObjectURL(blob);
-        link.download = "watermarked_image.png";
+        link.download = `watermarked_image.${ext}`;  // Use appropriate extension
         link.click();
-      }, "image/png");
+      }, originalMimeType);
     }
   });
 
@@ -182,7 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
   watermarkSizeSlider.addEventListener("input", updateTextProperties);
   watermarkColorInput.addEventListener("input", updateTextProperties);
   watermarkOpacitySlider.addEventListener("input", updateTextProperties);
-
 
   makeDraggable(draggableText, uploadedImage);
   makeDraggable(draggableImage, uploadedImage);

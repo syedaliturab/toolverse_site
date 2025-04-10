@@ -47,10 +47,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         ctx.drawImage(img, 0, 0, w, h);
 
-        const dataURL = canvas.toDataURL("image/jpeg", 1.0);
-        const fileName = file.name.replace(/\.[^/.]+$/, "") + "_" + format + ".jpg";
+        // Check the image format
+        const fileType = file.type.split('/')[1]; // Extract "png" or "jpeg"
 
-        createPreview(fileName, dataURL, file.name);
+        // Set the mime type based on the file type (jpeg or png)
+        const mimeType = fileType === "png" ? "image/png" : "image/jpeg";
+        
+        const dataURL = canvas.toDataURL(mimeType, 1.0);
+        const fileName = file.name.replace(/\.[^/.]+$/, "") + "_" + format + "." + fileType;
+
+        createPreview(fileName, dataURL, file.name, fileType); // Pass fileType to createPreview
       };
       img.src = event.target.result;
     };
@@ -58,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     reader.readAsDataURL(file);
   }
 
-  function createPreview(fileName, dataUrl, originalName) {
+  function createPreview(fileName, dataUrl, originalName, fileType) {
     const col = document.createElement("div");
     col.className = "col-md-4 preview-box text-center";
 
@@ -72,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
     downloadLink.download = fileName;
     downloadLink.className = "btn btn-sm btn-success mt-2 me-2";
     downloadLink.textContent = "⬇️ Download";
+
+    // Set the correct file extension based on file type
+    downloadLink.download = `${fileName.split('.')[0]}.${fileType}`; // Correct download extension
 
     const removeBtn = document.createElement("button");
     removeBtn.className = "btn btn-sm btn-outline-danger mt-2";
@@ -137,8 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
           ctx.drawImage(img, 0, 0, w, h);
   
-          const dataURL = canvas.toDataURL("image/jpeg", 1.0);
-          const fileName = file.name.replace(/\.[^/.]+$/, "") + "_" + format + ".jpg";
+          const fileType = file.type.split('/')[1]; // Check the original image type
+          const dataURL = canvas.toDataURL(`image/${fileType}`, 1.0); // Set MIME type correctly
+          const fileName = file.name.replace(/\.[^/.]+$/, "") + "_" + format + `.${fileType}`;
   
           // Update image and download button inside the card
           const imgEl = previewCard.querySelector("img");

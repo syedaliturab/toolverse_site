@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.toolverses.com/</loc></url>
-  <url><loc>https://www.toolverses.com/about.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/image-to-jpg.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/rotate-image.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/add-watermark.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/image-compress.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/crop-resize.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/photo-size-converter.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/img-to-multiformat.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/image-filter.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/thumbnail-tool.html</loc></url>
-  <url><loc>https://www.toolverses.com/tools/image/collage-maker.html</loc></url>
+
+  <url>
+    <loc>https://toolverses.com/index.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/about.html</loc>
+  </url>
+
+  <!-- 🖼️ Image Tools -->
+  <url>
+    <loc>https://toolverses.com/tools/image/index.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/add-watermark.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/collage-maker.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/crop-resize.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/image-compress.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/image-filter.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/image-to-jpg.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/img-to-multiformat.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/photo-size-converter.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/rotate-image.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/image/thumbnail-tool.html</loc>
+  </url>
+
+  <!-- 📄 PDF Tools -->
+  <url>
+    <loc>https://toolverses.com/tools/pdf/index.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/pdf/compress-pdf.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/pdf/edit-pdf.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/pdf/esign-pdf.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/pdf/merge-pdf.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/pdf/pdf-to-image.html</loc>
+  </url>
+  <url>
+    <loc>https://toolverses.com/tools/pdf/split-pdf.html</loc>
+  </url>
+
 </urlset>

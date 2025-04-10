@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://www.toolverses.com/tools/image/compress.html" />
   
     <!-- 🌐 Favicon & App -->
-    <link rel="icon" href="/assets/images/logoimage.png" type="image/png" />
+    <link rel="icon" href="/assets/images/icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
     <meta name="application-name" content="ToolVerses" />
     <meta name="theme-color" content="#ffffff" />
@@ -62,6 +62,7 @@
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
         padding: 2rem;
       }
+    
       .upload-box {
         border: 2px dashed #ced4da;
         border-radius: 12px;
@@ -69,30 +70,78 @@
         text-align: center;
         background-color: #fdfdfd;
       }
+    
       .slider-box label {
         font-weight: 500;
       }
+    
       .image-preview {
         border-radius: 10px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         margin-bottom: 1rem;
+        max-width: 50%;  /* Make image half the container size */
         max-height: 300px;
+        object-fit: contain; /* Maintain aspect ratio */
+        display: block;  /* Ensure the image is block-level */
+        margin-left: auto; /* Center image */
+        margin-right: auto; /* Center image */
       }
+    
       .result-row {
         display: flex;
-        justify-content: space-between;
+        justify-content: center; /* Center the images */
         gap: 20px;
+        flex-wrap: wrap;
       }
+    
       .sidebar-ad {
         background: #fff;
         border-radius: 12px;
         padding: 1rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       }
-      @media (max-width: 991px) {
-        .result-row {
+    
+      /* Ensure both images stay within their containers */
+      #originalPreview, #compressedPreview {
+        max-width: 50%; /* Adjust to half the container width */
+        max-height: 100%;
+        object-fit: contain;
+        margin-left: auto; /* Center image */
+        margin-right: auto; /* Center image */
+      }
+    
+      /* Container for both images */
+      #resultRow {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+        text-align: center;
+      }
+    
+      /* For mobile view, center the second image */
+      @media (max-width: 768px) {
+        #resultRow {
           flex-direction: column;
           align-items: center;
+        }
+    
+        #compressedPreview {
+          margin-top: 15px; /* Add space for mobile view */
+        }
+      }
+    
+      /* Add some styling to the download container to make sure it stays within limits */
+      #downloadContainer {
+        margin-top: 20px;
+        display: block;
+      }
+    
+      /* For larger viewports, ensure both images stay within their box */
+      @media (min-width: 992px) {
+        .result-row {
+          flex-direction: row;
+          justify-content: center;
         }
       }
     </style>
@@ -118,7 +167,7 @@
     </nav>
   </header>
 
-  <main class="py-5" style="background: linear-gradient(145deg, #f4f7fa, #e8ecf1); min-height: 90vh;">
+  <main class="py-5 con-background" style=" min-height: 90vh;">
     <div class="container">
         <div class="mb-3">
             <a href="../image/index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3" style="font-size: 0.875rem;">
