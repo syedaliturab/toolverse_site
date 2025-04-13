@@ -1,69 +1,123 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://toolverses.com/index.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/about.html</loc>
-  </url>
-
-  <!-- 🖼️ Image Tools -->
-  <url>
-    <loc>https://toolverses.com/tools/image/index.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/add-watermark.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/collage-maker.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/crop-resize.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/image-compress.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/image-filter.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/image-to-jpg.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/img-to-multiformat.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/photo-size-converter.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/rotate-image.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/image/thumbnail-tool.html</loc>
-  </url>
-
-  <!-- 📄 PDF Tools -->
-  <url>
-    <loc>https://toolverses.com/tools/pdf/index.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/pdf/compress-pdf.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/pdf/edit-pdf.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/pdf/esign-pdf.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/pdf/merge-pdf.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/pdf/pdf-to-image.html</loc>
-  </url>
-  <url>
-    <loc>https://toolverses.com/tools/pdf/split-pdf.html</loc>
-  </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://toolverses.com/</loc>
+<lastmod>2025-04-11T05:34:13+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://toolverses.com/index.html</loc>
+<lastmod>2025-04-11T05:34:13+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://toolverses.com/about.html</loc>
+<lastmod>2025-04-11T05:23:52+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/index.html</loc>
+<lastmod>2025-04-11T05:23:28+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/pdf/index.html</loc>
+<lastmod>2025-04-11T05:23:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://toolverses.com/policy.html</loc>
+<lastmod>2025-04-11T05:23:53+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://toolverses.com/service.html</loc>
+<lastmod>2025-04-11T05:23:52+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://toolverses.com/cookie.html</loc>
+<lastmod>2025-04-11T05:23:52+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/image-to-jpg.html</loc>
+<lastmod>2025-04-11T05:23:28+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/image-compress.html</loc>
+<lastmod>2025-04-11T05:23:30+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/add-watermark.html</loc>
+<lastmod>2025-04-11T05:23:31+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/rotate-image.html</loc>
+<lastmod>2025-04-11T05:23:28+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/crop-resize.html</loc>
+<lastmod>2025-04-11T05:23:28+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/img-to-multiformat.html</loc>
+<lastmod>2025-04-11T05:23:28+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/photo-size-converter.html</loc>
+<lastmod>2025-04-11T05:23:30+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/thumbnail-tool.html</loc>
+<lastmod>2025-04-11T05:23:30+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/image-filter.html</loc>
+<lastmod>2025-04-11T05:23:30+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/image/collage-maker.html</loc>
+<lastmod>2025-04-11T05:23:30+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/pdf/merge-pdf.html</loc>
+<lastmod>2025-04-11T05:23:31+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/pdf/split-pdf.html</loc>
+<lastmod>2025-04-11T05:23:32+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/pdf/pdf-to-image.html</loc>
+<lastmod>2025-04-11T05:23:31+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/pdf/compress-pdf.html</loc>
+<lastmod>2025-04-11T05:23:31+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/pdf/edit-pdf.html</loc>
+<lastmod>2025-04-11T05:23:32+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://toolverses.com/tools/pdf/esign-pdf.html</loc>
+<lastmod>2025-04-11T05:23:32+00:00</lastmod>
+<priority>0.64</priority>
+</url>
 </urlset>

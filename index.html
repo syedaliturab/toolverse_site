@@ -8,7 +8,7 @@
     <meta name="description" content="ToolVerses — Your go-to hub for free, fast & private online tools like Image to PDF, JSON Formatter, and more." />
     <meta name="keywords" content="online tools, free tools, image to pdf, json formatter, toolverses, browser tools, tool site" />
     <meta name="author" content="ToolVerses" />
-    <link rel="canonical" href="https://www.toolverses.com/" />
+    <link rel="canonical" href="https://toolverses.com/index.html" />
   
     <!-- 🔧 Favicon -->
     <link rel="icon" href="/assets/images/icon.png" type="image/png" />
@@ -19,23 +19,26 @@
     <!-- 🔗 Open Graph -->
     <meta property="og:title" content="ToolVerses - Free Online Tools Hub" />
     <meta property="og:description" content="Your ultimate destination for fast, free & private browser-based tools." />
-    <meta property="og:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
-    <meta property="og:url" content="https://www.toolverses.com/" />
+    <meta property="og:image" content="https://toolverses.com/assets/images/preview.jpg" />
+    <meta property="og:url" content="https://toolverses.com/index.html" />
     <meta property="og:type" content="website" />
   
     <!-- 🐦 Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ToolVerses - Free Online Tools Hub" />
     <meta name="twitter:description" content="No downloads. No signups. Just powerful tools in your browser." />
-    <meta name="twitter:image" content="https://www.toolverses.com/assets/images/preview.jpg" />
+    <meta name="twitter:image" content="https://toolverses.com/assets/images/preview.jpg" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3742645369570051"
+     crossorigin="anonymous"></script>
   
     <!-- 🧠 Structured Data (Logo Schema) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "url": "https://www.toolverses.com",
-      "logo": "https://www.toolverses.com/assets/images/logoimage.png"
+      "url": "https://toolverses.com/index.html",
+      "logo": "https://toolverses.com/assets/images/logoimage.png"
     }
     </script>
   
@@ -73,7 +76,7 @@
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img src="assets/images/logoimage.png" alt="ToolVerses" class="me-2 nav-logo" />
+          <img src="assets/images/logoimage.png" alt="ToolVerses" class="me-2 nav-logo" loading="lazy" width="150" height="40" />
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
@@ -84,7 +87,7 @@
           <div class="navbar-nav">
             <a class="nav-link active" href="index.html">Home</a>
             <a class="nav-link" href="about.html">About</a>
-            <a class="nav-link" href="tools/">Tools</a>
+            <a class="nav-link" href="#tools">Tools</a>
           </div>
         </div>
       </div>
@@ -97,6 +100,7 @@
   <section class="d-flex align-items-center justify-content-center text-center py-5" style="min-height: 65vh; background: linear-gradient(145deg, #a3c9ff, #d5bfff);">
     <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm w-100" style="max-width: 720px;">
       <h1 class="fw-bold mb-3">🛠️ Welcome to <span class="text-primary">ToolVerses</span></h1>
+      <h2 class="h5 text-muted mb-4">A free suite of fast, privacy-friendly browser tools</h2>
       <p class="lead mb-4">Your ultimate destination for <strong>free, fast & private online tools</strong> — no downloads, no signups, just powerful features that run in your browser.</p>
       <a href="#tools" class="btn btn-primary btn-lg px-4 fw-semibold">🚀 Explore Tools</a>
     </div>
@@ -108,9 +112,9 @@
       <div class="row">
         <!-- Left: Categories -->
         <div class="col-lg-9">
-          <h2 class="fw-semibold mb-4">🛠️ Featured Tool Categories</h2>
+          <h2 class="fw-semibold mb-4" id="tools">🛠️ Featured Tool Categories</h2>
           <div class="row g-4">
-            <div class="col-md-6 col-lg-6 d-flex" id="tools">
+            <div class="col-md-6 col-lg-6 d-flex" >
               <a href="tools/image/index.html" class="text-decoration-none w-100">
                 <div class="card shadow-sm text-center p-4 border-0 rounded-4 bg-white hover-shadow h-100">
                   <div class="mb-2" style="font-size: 2rem;">🖼️</div>
@@ -133,6 +137,17 @@
                 </div>
               </a>
             </div>
+            <div class="col-md-6 col-lg-6 d-flex">
+              <a href="tools/text-formatter/index.html" class="text-decoration-none w-100">
+                <div class="card shadow-sm text-center p-4 border-0 rounded-4 bg-white hover-shadow h-100">
+                  <div class="mb-2" style="font-size: 2rem;">📝</div>
+                  <h5 class="fw-semibold mb-2">Text Formatter</h5>
+                  <p class="text-muted small mb-0">
+                    Clean, format, and transform messy text with one click. Remove spaces, add numbers, convert cases & more.
+                  </p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -150,9 +165,18 @@
   </section>
 </main>
 
-  <footer>
-    <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
-  </footer>
+<footer class="text-center py-4 bg-white border-top">
+  <div class="container">
+    <p class="mb-0 text-muted small">
+      © 2025 <strong>ToolVerses</strong>. All rights reserved.
+    </p>
+    <div class="mt-3">
+      <a href="/policy.html" class="text-muted me-3">Privacy Policy</a>
+      <a href="/service.html" class="text-muted me-3">Terms of Service</a>
+      <a href="/cookie.html" class="text-muted">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>

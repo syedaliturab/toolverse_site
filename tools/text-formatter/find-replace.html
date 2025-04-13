@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Find & Replace Text - ToolVerses</title>
+  <meta name="description" content="Find and replace text or patterns in your content using simple or regex search. Free, browser-based, fast, and private." />
+  <meta name="keywords" content="find and replace, regex replace, text search, match and replace, online text tool, ToolVerses" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/text/find-replace.html" />
+
+  <!-- Social Sharing -->
+  <meta property="og:title" content="Find & Replace Text - Regex & Simple Match | ToolVerses" />
+  <meta property="og:description" content="Quickly search and replace words or patterns using regex or simple text. Free, private, browser-based." />
+  <meta property="og:image" content="https://toolverses.com/assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/text/find-replace.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Find & Replace Text Tool - ToolVerses" />
+  <meta name="twitter:description" content="Search and replace text using regex or simple text — browser-based, secure, and free." />
+  <meta name="twitter:image" content="https://toolverses.com/assets/images/preview.jpg" />
+
+  <link rel="icon" href="/assets/images/icon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .tool-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .form-control {
+      resize: vertical;
+    }
+
+    #highlightPreview mark {
+      background: #ffe5b4;
+      padding: 0 2px;
+      border-radius: 4px;
+    }
+
+    #highlightPreview mark.active {
+      background: #ffd700;
+    }
+
+    @media (max-width: 991.98px) {
+      .tool-sidebar {
+        margin-top: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="../../index.html">
+          <img src="../../assets/images/logoimage.png" alt="ToolVerses" width="150" height="40" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../../index.html">Home</a>
+            <a class="nav-link" href="../../about.html">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5 con-background" style="min-height: 90vh;">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="mb-3">
+          <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">← Back</a>
+        </div>
+
+        <div class="col-12 col-lg-9">
+          <article class="tool-box">
+            <h1 class="fw-bold mb-2">🔍 Find & Replace</h1>
+            <h2 class="h5 text-muted mb-4">Search and replace words, phrases, or patterns using simple or regex match. Fully browser-based and private.</h2>
+
+            <label for="inputText" class="form-label fw-semibold">Paste your text:</label>
+            <textarea id="inputText" class="form-control mb-3" rows="6" placeholder="Paste your text here..."></textarea>
+
+            <div class="row mb-3">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <label for="findText" class="form-label fw-semibold">Find:</label>
+                <input type="text" id="findText" class="form-control" placeholder="Word or pattern to find..." />
+              </div>
+              <div class="col-md-6">
+                <label for="replaceText" class="form-label fw-semibold">Replace with:</label>
+                <input type="text" id="replaceText" class="form-control" placeholder="Replacement text..." />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Match Mode:</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="matchMode" id="modeSimple" value="simple" checked />
+                <label class="form-check-label" for="modeSimple">Simple</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="matchMode" id="modeRegex" value="regex" />
+                <label class="form-check-label" for="modeRegex">Regex (Complex)</label>
+              </div>
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="caseSensitive" />
+              <label class="form-check-label fw-semibold" for="caseSensitive">Case Sensitive</label>
+            </div>
+
+            <!-- 🔍 Find Button -->
+            <div class="d-grid mb-3">
+              <button id="findBtn" class="btn btn-dark">🔍 Find</button>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <span id="matchCount" class="fw-semibold">0 matches</span>
+              <button id="prevMatch" class="btn btn-outline-dark btn-sm px-3">⬆️ Prev</button>
+              <button id="nextMatch" class="btn btn-outline-dark btn-sm px-3">⬇️ Next</button>
+              <button id="resetBtn" class="btn btn-danger btn-sm ms-auto">♻️ Reset</button>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
+              <button id="replaceBtn" class="btn btn-outline-secondary">🔁 Replace Current</button>
+              <button id="replaceAllBtn" class="btn btn-primary ms-md-3">🔁 Replace All</button>
+            </div>
+<!-- Removed: Replaced Output section -->
+
+<label class="form-label fw-semibold">Highlighted Matches Preview:</label>
+<div id="highlightPreview" class="form-control mb-3" style="height: 200px; overflow-y: auto; white-space: pre-wrap; background: #f8f9fa;"></div>     
+</article>
+        </div>
+
+        <aside class="col-12 col-lg-3 tool-sidebar">
+          <div class="bg-white rounded-4 shadow-sm text-center p-3 h-100">
+            <p class="text-muted small mb-2">Sponsored</p>
+            <div style="width: 100%; height: 280px; background: #e9ecef; border-radius: 8px;">
+              <p class="text-muted small mt-5">Ad Placeholder</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 bg-white border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+      <div class="mt-3">
+        <a href="/policy.html" class="text-muted me-3">Privacy Policy</a>
+        <a href="/service.html" class="text-muted me-3">Terms of Service</a>
+        <a href="/cookie.html" class="text-muted">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/text-formatter/find-replace.js"></script>
+</body>
+</html>
