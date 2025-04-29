@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Frequent Bigrams and Trigrams - Free Online | ToolVerses</title>
+  <meta name="description" content="Discover the most frequent bigrams (2-word pairs) and trigrams (3-word sequences) in your text. Analyze patterns easily and privately with ToolVerses." />
+  <meta name="keywords" content="ngram finder, bigram analyzer, trigram analyzer, text analyzer, frequent words, toolverses" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/text-analyzer/ngram-finder.html" />
+
+  <meta property="og:title" content="Find Frequent Bigrams and Trigrams - ToolVerses" />
+  <meta property="og:description" content="Quickly discover most frequent word pairs and triples in your writing. No uploads — private, browser-only analyzer." />
+  <meta property="og:image" content="https://toolverses.com/assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/text-analyzer/ngram-finder.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ToolVerses - Free Online N-Gram Finder" />
+  <meta name="twitter:description" content="Analyze your text for frequent bigrams and trigrams easily. 100% browser-based, private, and free." />
+  <meta name="twitter:image" content="https://toolverses.com/assets/images/preview.jpg" />
+
+  <link rel="icon" href="/assets/images/icon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <style>
+    .tool-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+    .form-control {
+      resize: vertical;
+    }
+    @media (max-width: 991.98px) {
+      .tool-sidebar { margin-top: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+        <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" loading="lazy" width="150" height="40" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="nav-link" href="../../about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="py-5 con-background" style="min-height: 90vh;">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="mb-3">
+        <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">← Back</a>
+      </div>
+
+      <div class="col-12 col-lg-9">
+        <article class="tool-box">
+          <h1 class="fw-bold mb-2">🔍 N-Gram Finder</h1>
+          <h2 class="h5 text-muted mb-4">Discover most frequent Bigrams and Trigrams in your text.</h2>
+
+          <label for="inputText" class="form-label fw-semibold">Paste your text:</label>
+          <textarea id="inputText" class="form-control mb-3" rows="8" placeholder="Paste your text here..."></textarea>
+
+          <div class="d-grid mb-4">
+            <button id="analyzeBtn" class="btn btn-primary">🔍 Find N-Grams</button>
+          </div>
+
+          <div id="resultStats" class="mt-4" style="display: none;">
+            <h5 class="fw-bold mb-3">📊 Top Bigrams:</h5>
+            <ul id="bigramList" class="list-group mb-4"></ul>
+
+            <h5 class="fw-bold mb-3">📊 Top Trigrams:</h5>
+            <ul id="trigramList" class="list-group"></ul>
+          </div>
+        </article>
+
+        <section class="tool-info mt-4">
+          <h2>Understand Your Writing Patterns Instantly</h2>
+          <p>
+            ToolVerses' N-Gram Finder analyzes how words appear together — helping you find the most common 2-word (bigram) and 3-word (trigram) combinations in your text.
+          </p>
+          <p>
+            Useful for SEO, writing analysis, content optimization, and research — all inside your browser without any uploads!
+          </p>
+
+          <h3>🧪 Example Test Case:</h3>
+          <p><strong>Paste this sample text to test:</strong></p>
+          <pre style="background: #f8f9fa; padding: 10px; border-radius: 8px;">
+The dog runs fast.  
+The dog barks loudly.  
+The dog plays outside.
+          </pre>
+
+          <ul>
+            <li><strong>Top Bigram:</strong> the dog (3 times)</li>
+            <li><strong>Top Trigrams:</strong> the dog runs, the dog barks, the dog plays</li>
+          </ul>
+
+          <p>
+            Spot repeated patterns and improve your writing easily!
+          </p>
+        </section>
+      </div>
+
+      <aside class="col-12 col-lg-3 tool-sidebar">
+        <!-- Future Ad Section -->
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="text-center py-4 bg-white border-top">
+  <div class="container">
+    <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    <div class="mt-3">
+      <a href="/policy.html" class="text-muted me-3">Privacy Policy</a>
+      <a href="/service.html" class="text-muted me-3">Terms of Service</a>
+      <a href="/cookie.html" class="text-muted me-3">Cookie Policy</a>
+      <a href="/contact.html" class="text-muted">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/js/text-analyzer/ngram-finder.js"></script>
+
+</body>
+</html>

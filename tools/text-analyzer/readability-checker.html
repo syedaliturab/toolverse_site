@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check Readability Score (Flesch–Kincaid) - Free Online | ToolVerses</title>
+  <meta name="description" content="Instantly calculate the Flesch–Kincaid readability score for your text. Know how easy or hard it is to read — 100% browser-based and private." />
+  <meta name="keywords" content="readability checker, flesch kincaid, readability score, text analyzer, toolverses, free online tools" />
+  <meta name="author" content="ToolVerses" />
+  <link rel="canonical" href="https://toolverses.com/tools/text-analyzer/readability-checker.html" />
+
+  <meta property="og:title" content="Check Readability Score (Flesch–Kincaid) - ToolVerses" />
+  <meta property="og:description" content="Find out how easy or difficult your text is to read. Analyze instantly with our Flesch–Kincaid calculator — no signups needed." />
+  <meta property="og:image" content="https://toolverses.com/assets/images/preview.jpg" />
+  <meta property="og:url" content="https://toolverses.com/tools/text-analyzer/readability-checker.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ToolVerses - Free Online Readability Checker" />
+  <meta name="twitter:description" content="Calculate your text's readability level instantly using the Flesch–Kincaid scoring method." />
+  <meta name="twitter:image" content="https://toolverses.com/assets/images/preview.jpg" />
+
+  <link rel="icon" href="/assets/images/icon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/images/logoimage.png" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="stylesheet" href="../../assets/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <style>
+    .tool-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+    .form-control {
+      resize: vertical;
+    }
+    @media (max-width: 991.98px) {
+      .tool-sidebar { margin-top: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+        <img src="../../assets/images/logoimage.png" alt="ToolVerses logo" class="me-2 nav-logo" loading="lazy" width="150" height="40" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="../../index.html">Home</a>
+          <a class="nav-link" href="../../about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="py-5 con-background" style="min-height: 90vh;">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="mb-3">
+        <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">← Back</a>
+      </div>
+
+      <div class="col-12 col-lg-9">
+        <article class="tool-box">
+          <h1 class="fw-bold mb-2">📖 Readability Checker</h1>
+          <h2 class="h5 text-muted mb-4">Calculate the Flesch–Kincaid score to measure how easy your text is to read.</h2>
+
+          <label for="inputText" class="form-label fw-semibold">Paste your text:</label>
+          <textarea id="inputText" class="form-control mb-3" rows="8" placeholder="Paste your text here..."></textarea>
+
+          <div class="d-grid mb-4">
+            <button id="analyzeBtn" class="btn btn-primary">📖 Check Readability</button>
+          </div>
+
+          <div id="resultStats" class="mt-4" style="display: none;">
+            <h5 class="fw-bold mb-3">📊 Readability Results:</h5>
+            <ul class="list-group">
+              <li class="list-group-item">Words: <strong id="wordCount">0</strong></li>
+              <li class="list-group-item">Sentences: <strong id="sentenceCount">0</strong></li>
+              <li class="list-group-item">Syllables: <strong id="syllableCount">0</strong></li>
+              <li class="list-group-item">Flesch–Kincaid Score: <strong id="readabilityScore">0</strong></li>
+            </ul>
+          </div>
+
+        </article>
+
+        <section class="tool-info mt-4">
+            <h2>Check Your Text’s Readability Instantly</h2>
+            <p>
+              ToolVerses' Readability Checker calculates the Flesch–Kincaid Reading Ease score — helping you understand how easy or difficult your text is to read. Whether you're writing for blogs, school essays, or professional reports, ensuring the right readability level is crucial.
+            </p>
+            <p>
+              This tool is 100% browser-based. No uploads, no server processing. Just fast, private analysis right inside your browser!
+            </p>
+
+            <h3>🧪 Example Test Case:</h3>
+            <p><strong>Paste this sample text to test:</strong></p>
+            <pre style="background: #f8f9fa; padding: 10px; border-radius: 8px;">
+The cat sat on the mat.  
+It was a sunny day.
+            </pre>
+
+            <ul>
+              <li><strong>Words:</strong> 11</li>
+              <li><strong>Sentences:</strong> 2</li>
+              <li><strong>Syllables:</strong> Approx 13</li>
+              <li><strong>Flesch–Kincaid Score:</strong> Approx 100 (Very Easy)</li>
+            </ul>
+
+            <p>
+              Higher scores (90–100) mean very easy to read. Lower scores (30–60) mean harder, academic-level text.
+            </p>
+          </section>
+      </div>
+
+      <aside class="col-12 col-lg-3 tool-sidebar">
+        <!-- Future Ad Section -->
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="text-center py-4 bg-white border-top">
+  <div class="container">
+    <p class="mb-0 text-muted small">© 2025 <strong>ToolVerses</strong>. All rights reserved.</p>
+    <div class="mt-3">
+      <a href="/policy.html" class="text-muted me-3">Privacy Policy</a>
+      <a href="/service.html" class="text-muted me-3">Terms of Service</a>
+      <a href="/cookie.html" class="text-muted me-3">Cookie Policy</a>
+      <a href="/contact.html" class="text-muted">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/js/text-analyzer/readability-checker.js"></script>
+
+</body>
+</html>
